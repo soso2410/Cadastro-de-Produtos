@@ -46,7 +46,7 @@
                             <label for="SelectCategoy" class="col-sm-2 col-form-label">Categoria:</label>
                             <div class="col-sm-4">
                                 <select class="form-select" aria-label="Selecione uma categoria" id="SelectCategoy">
-                                   <option selected>Escolha:</option>
+                                    <option selected>Escolha:</option>
                                     <option value="1"> Produção Própria</option>
                                     <option value="2"> Nacional</option>
                                     <option value="3"> Importado</option>
@@ -54,7 +54,7 @@
                             </div>
                         </div>
                         <div class="row mb-3 mt-3">
-                            <label for="inputCheck" class="col-sm-2 col-form-label">Opções:</label>
+                            <label class="col-sm-2 col-form-label">Opções:</label>
                             <div class="col-sm-4">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="" id="checkBoxPromotion">
@@ -71,7 +71,7 @@
                             </div>
                         </div>
                         <div class="row mb-3 mt-3">
-                           <button type="button" class="col-sm-2 btn btn-primary">Cadastrar</button>
+                            <button type="button" class="col-sm-2 btn btn-primary">Cadastrar</button>
                         </div>
                     </form>
                 </div>
@@ -79,8 +79,59 @@
 
         </section>
         <hr>
-        <section class="display-6">
-            Produtos de Cadastro:
+        <section>
+            <div class="display-6">
+                Produtos Cadastrados:
+            </div>
+            <div class="row">
+                <div class="col-md-10 offset-md-1 mt-4">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Descrição</th>
+                                <th scope="col">Preço</th>
+                                <th scope="col">Categoria</th>
+                                <th scope="col">Opções</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Computador M1-TX</td>
+                                <td>Intel i7, 16GB, SSD 256, HD 1TB</td>
+                                <td>4.900,00</td>
+                                <td>Nacional</td>
+                                <td>
+                                    <span class="badge bg-success">P</span>
+                                    <span class="badge bg-primary">L</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Computador M2-TX</td>
+                                <td>Intel i7, 32GB, SSD 512, HD 1TB</td>
+                                <td>4.900,00</td>
+                                <td>Importado</td>
+                                <td>
+                                    <span class="badge bg-primary">L</span>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Computador M1-T</td>
+                                <td>Intel i5, 8GB, HD 1TB</td>
+                                <td>2.900,00</td>
+                                <td>Produção Própria</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
         </section>
     </main>
 
