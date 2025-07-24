@@ -52,47 +52,65 @@ function loadProducts() {
     }
 }
 
+//save a product
+function save() {
+    var prod = {
+        id: products.length + 1,
+        name: document.getElementById("inputNome").value,
+        description: document.getElementById("inputDescription").value,
+        price: convertToNumber(document.getElementById("inputPrice").value),
+        category: document.getElementById("SelectCategory").value,
+        promotion: document.getElementById("checkBoxPromotion").checked,
+        new: document.getElementById("checkBoxNewProduct").checked
+    };
 
-//Add new Row
-function addNewRow(prod) {
-    var table = document.getElementById("productsTable");
+    addNewRow(prod);
+    products.push(prod);
 
-    var newRow = table.insertRow();
-
-    //Insert product id
-    var idNode = document.createTextNode(prod.id);
-    newRow.insertCell().appendChild(idNode);
-
-    //Insert product name
-    var nameNode = document.createTextNode(prod.name);
-    newRow.insertCell().appendChild(nameNode);
-
-    //Insert product descrição
-    var descriptionNode = document.createTextNode(prod.description);
-    newRow.insertCell().appendChild(descriptionNode);
-
-    //Insert product price
-    var formatter = new Intl.NumberFormat("pt-BR", {
-        style: "currency",
-        currency: "BRL",
-    });
-
-    var priceNode = document.createTextNode(formatter.format(prod.price));
-    newRow.insertCell().appendChild(priceNode);
-
-    //Insert product category
-    var categoryNode = document.createTextNode(categories[prod.category - 1].name);
-    newRow.insertCell().appendChild(categoryNode);
-
-    //Insert product options
-    var options = "";
-    if (prod.promotion) {
-        options = "<span class='badge bg-success me-1'>P</span>";
-    }
-
-    if (prod.new) {
-        options += "<span class='badge bg-primary'>L</span>";
-    }
-
-    newRow.insertCell().innerHTML = options;
+    document.getElementById("formProduct").reset();
 }
+
+
+    //Add new Row
+    function addNewRow(prod) {
+        var table = document.getElementById("productsTable");
+
+        var newRow = table.insertRow();
+
+        //Insert product id
+        var idNode = document.createTextNode(prod.id);
+        newRow.insertCell().appendChild(idNode);
+
+        //Insert product name
+        var nameNode = document.createTextNode(prod.name);
+        newRow.insertCell().appendChild(nameNode);
+
+        //Insert product descrição
+        var descriptionNode = document.createTextNode(prod.description);
+        newRow.insertCell().appendChild(descriptionNode);
+
+        //Insert product price
+        var formatter = new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+        });
+
+        var priceNode = document.createTextNode(formatter.format(prod.price));
+        newRow.insertCell().appendChild(priceNode);
+
+        //Insert product category
+        var categoryNode = document.createTextNode(categories[prod.category - 1].name);
+        newRow.insertCell().appendChild(categoryNode);
+
+        //Insert product options
+        var options = "";
+        if (prod.promotion) {
+            options = "<span class='badge bg-success me-1'>P</span>";
+        }
+
+        if (prod.new) {
+            options += "<span class='badge bg-primary'>L</span>";
+        }
+
+        newRow.insertCell().innerHTML = options;
+    }
